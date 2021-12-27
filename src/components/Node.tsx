@@ -11,16 +11,17 @@ interface TreeNode {
 export default function Node(props: any) {
   const [descendants, setDescendants] = React.useState([] as TreeNode[]);
   const [show, setShow] = React.useState(false);
+  const TABSPACE = 3;
 
   const showButton = () => setShow(true);
   const hideButton = () => setShow(false);
 
-  const createWhiteSpace = (ends: boolean[]) => {
+  const createPrefix = (ends: boolean[]) => {
     let res = "";
 
-    for (let i = 0; i < ends.length - 1; i++) {
+    for (let i = 1; i < ends.length; i++) {
       const end = ends[i];
-      res += !end ? "│".concat("\xa0".repeat(tabspace)) : "\xa0".repeat(tabspace)
+      res += !end ? "│".concat("\xa0".repeat(TABSPACE)) : "\xa0".repeat(TABSPACE)
     }
 
     res += props.end ? '└──' : '├──';
@@ -32,15 +33,11 @@ export default function Node(props: any) {
     setDescendants(descendants);
   }
 
-  const tabspace = 4;
-  const ends = props.level === 0 ? [] : [...props.previousEnds, props.end]
-  const whitespace = createWhiteSpace(ends);
-  const prefix = props.level !== 0 ? whitespace : "";
-
+  const prefix = props.level !== 0 ? createPrefix(props.previousEnds) : "";
 
   return (
     <div>
-      <div className="" onMouseEnter={showButton} onMouseLeave={hideButton} style={{ height: "1.35rem" }} >
+      <div className="" onMouseEnter={showButton} onMouseLeave={hideButton} style={{ height: "1.3rem" }} >
         <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
           {prefix}
           <div className="" >
@@ -55,7 +52,7 @@ export default function Node(props: any) {
           name={d.value}
           key={index}
           level={props.level + 1}
-          previousEnds={ends}
+          previousEnds={[...props.previousEnds, props.end]}
         />)
       }
     </div>
