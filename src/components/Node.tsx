@@ -29,15 +29,18 @@ export default function Node(props: any) {
   }
 
   const add = () => {
-    descendants.push({ value: 'fileOrFolder', descendants: [], level: props.level + 1 });
-    setDescendants(descendants);
+    let newNode = { value: 'fileOrFolder', descendants: [], level: props.level + 1 };
+    setDescendants([...descendants, newNode]);
   }
 
   const prefix = props.level !== 0 ? createPrefix(props.previousEnds) : "";
 
   return (
     <div>
-      <div className="" onMouseEnter={showButton} onMouseLeave={hideButton} style={{ height: "1.3rem" }} >
+      <div className=""
+        onMouseEnter={showButton}
+        onMouseLeave={hideButton}
+        style={{ height: "1.3rem" }} >
         <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
           {prefix}
           <div className="" >
