@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Box sx={{ width: "45vw", padding: "2rem" }}>
+      <Box sx={{ width: "95vw", padding: "2rem" }}>
         <Node end={true} name="root" level={0} previousEnds={[]} />
       </Box>
       <Output />
