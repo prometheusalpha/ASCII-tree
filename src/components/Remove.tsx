@@ -10,6 +10,7 @@ export default function Remove(props: any) {
         display: `${display}`,
         height: "2rem",
       }}
+      title="Remove node"
       onClick={props.remove}
       color="primary"
     >

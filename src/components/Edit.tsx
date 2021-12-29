@@ -12,6 +12,7 @@ export default function Edit(props: any) {
         height: "2rem",
       }}
       onClick={props.edit}
+      title="Edit node name"
       color="primary"
     >
       {props.isEditing ?

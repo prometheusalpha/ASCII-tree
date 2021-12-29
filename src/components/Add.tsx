@@ -11,6 +11,7 @@ export default function Add(props: any) {
       opacity: `${display}`,
       height: "2rem",
     }}
+      title="Add child node"
       onClick={props.add}
       variant="text">
       <AddIcon />

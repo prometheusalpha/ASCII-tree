@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Box sx={{ width: "95vw", padding: "2rem" }} id="main-box">
-        <div className="limit-width">
+        <div className="limit-width" style={{ fontWeight: "600" }}>
           ASCII Tree
         </div>
         <hr className="divider" />
