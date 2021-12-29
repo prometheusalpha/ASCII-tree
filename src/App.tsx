@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Node from './components/Node';
 import Button from '@mui/material/Button';
 import { Stack } from '@mui/material';
-import Typography from '@mui/material/Typography';
 
 function App() {
 
@@ -18,7 +17,7 @@ function App() {
     let nodeContentArr = Array.from(document
       .getElementsByClassName("node-content"));
     let res = "";
-    let contents = nodeContentArr.forEach((nodeContent: any) => {
+    nodeContentArr.forEach((nodeContent: any) => {
       res += nodeContent.innerText + "\n";
     });
     navigator.clipboard.writeText(res);
