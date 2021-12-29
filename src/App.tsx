@@ -6,10 +6,22 @@ import Node from './components/Node';
 
 function App() {
 
+  const [rootName, setRootName] = React.useState("root");
+
+  const editRootName = (index: number = 0, name: string) => {
+    setRootName(name);
+  }
   return (
     <>
       <Box sx={{ width: "95vw", padding: "2rem" }}>
-        <Node end={true} name="root" level={0} previousEnds={[]} />
+        <Node
+          end={true}
+          name={rootName}
+          level={0}
+          index={0}
+          previousEnds={[]}
+          edit={editRootName}
+        />
       </Box>
       <Output />
     </>
