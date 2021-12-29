@@ -1,4 +1,4 @@
-html{
+html {
   font-size: 24px;
 }
 
@@ -7,8 +7,44 @@ body {
   font-family: 'Input Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #1a202c;
+  color: #ddd;
 }
 
-*{
+* {
   box-sizing: border-box !important;
+}
+
+.input-name {
+  border: 2px solid #000;
+  font-size: 1rem;
+  font-family: 'Input Mono',
+    monospace;
+}
+
+.copy-button {
+  font-size: .8rem !important;
+  font-family: 'Input Mono',
+    monospace !important;
+}
+
+#output {
+  display: none;
+}
+
+#main-box {
+  margin: 0;
+  padding: 1rem 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Input Mono", monospace !important;
+}
+
+.limit-width {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.divider{
+  margin: 1rem 0;
 }

@@ -15,7 +15,7 @@ export default function Node(props: any) {
   const hideButton = () => setShow(false);
 
   const createPrefix = (ends: boolean[]) => {
-    let res = "";
+    let res = "\xa0";
 
     for (let i = 1; i < ends.length; i++) {
       const end = ends[i];
@@ -58,7 +58,6 @@ export default function Node(props: any) {
 
   const finishEditing = (e: any) => {
     if (e.key === "Enter") {
-      console.log("Enter");
       setIsEditable(false);
       editSelf();
     }
@@ -72,20 +71,23 @@ export default function Node(props: any) {
         style={{ height: "1.3rem" }}
       >
         <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
-          {prefix}
-          {isEditable ?
-            <input
-              type="text"
-              value={props.name}
-              ref={inputRef}
-              onChange={editSelf}
-              onKeyDown={finishEditing} /> :
-            props.name
-          }
+          <div className="node-content">
+            {prefix}
+            {isEditable ?
+              <input
+                type="text"
+                className="input-name"
+                value={props.name}
+                ref={inputRef}
+                onChange={editSelf}
+                onKeyDown={finishEditing} /> :
+              props.name
+            }
+          </div>
           <Add show={show} add={add} />
           <Edit
             show={show}
-            edit={() => { setIsEditable(!isEditable) }}
+            edit={() => { setIsEditable(!isEditable); }}
             isEditing={isEditable}
           />
           <Remove
