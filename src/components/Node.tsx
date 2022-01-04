@@ -1,6 +1,5 @@
 import React from 'react'
 import Add from './Add'
-import Stack from '@mui/material/Stack';
 import Remove from './Remove'
 import Edit from './Edit'
 
@@ -40,7 +39,7 @@ export default function Node(props: any) {
     setDescendants(newDescendants);
   }
 
-  const deleteSelf = () => {
+  const removeSelf = () => {
     setDescendants([]);
     props.remove(props.index)
   }
@@ -65,18 +64,17 @@ export default function Node(props: any) {
 
   return (
     <div>
-      <div className=""
+      <div className="h-5"
         onMouseEnter={showButton}
         onMouseLeave={hideButton}
-        style={{ height: "1.3rem" }}
       >
-        <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
-          <div className="node-content">
+        <div className="flex gap-4">
+          <div className="font-mono h-5">
             {prefix}
             {isEditable ?
               <input
                 type="text"
-                className="input-name"
+                className="input-name text-slate-900"
                 value={props.name}
                 ref={inputRef}
                 onChange={editSelf}
@@ -92,10 +90,10 @@ export default function Node(props: any) {
           />
           <Remove
             show={show}
-            remove={deleteSelf}
+            remove={removeSelf}
             level={props.level}
           />
-        </Stack>
+        </div>
       </div>
       {descendants.map((fileOrFolder: string, index: number) =>
         <Node

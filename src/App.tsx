@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
-import Box from '@mui/material/Box';
 import Node from './components/Node';
-import Button from '@mui/material/Button';
-import { Stack } from '@mui/material';
 
 function App() {
 
@@ -29,25 +26,22 @@ function App() {
 
   return (
     <>
-      <Box sx={{ width: "95vw", padding: "2rem" }} id="main-box">
-        <div className="limit-width" style={{ fontWeight: "600" }}>
+      <div className="w-screen p-8 bg-slate-800 h-screen text-white font-sans" id="main-box">
+        <div className="max-w-5xl text-5xl font-semibold" >
           ASCII Tree
         </div>
-        <hr className="divider" />
-        <Stack
-          direction="row"
+        <hr className="bg-slate-500 my-4" />
+        <div
           style={{ alignItems: "center", marginBottom: "1rem" }}
-          spacing={3}
-          className="limit-width"
+          className="max-w-5xl flex gap-3"
         >
-          <Button
-            variant="contained"
+          <button
             onClick={copyNodeContent}
-            className="copy-button"
-          >Copy to clipboard</Button>
-          <div id="output">Copied!</div>
-        </Stack>
-        <div className="limit-width">
+            className="copy-button font-sans bg-slate-600 p-3 rounded-xl"
+          >Copy to clipboard</button>
+          <div id="output" className="hidden">Copied!</div>
+        </div>
+        <div className="max-w-5xl">
           <Node
             end={true}
             name={rootName}
@@ -57,7 +51,7 @@ function App() {
             edit={editRootName}
           />
         </div>
-      </Box>
+      </div>
     </>
   );
 }
