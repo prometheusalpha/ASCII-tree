@@ -7,7 +7,7 @@ export default function Node(props: any) {
   const [descendants, setDescendants] = React.useState([] as string[]);
   const [isEditable, setIsEditable] = React.useState(false);
   const [show, setShow] = React.useState(false);
-  const TABSPACE = 3;
+  const TABSPACE = 2;
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const showButton = () => setShow(true);
@@ -74,7 +74,7 @@ export default function Node(props: any) {
             {isEditable ?
               <input
                 type="text"
-                className="input-name text-slate-900"
+                className="input-name text-white bg-slate-700"
                 value={props.name}
                 ref={inputRef}
                 onChange={editSelf}

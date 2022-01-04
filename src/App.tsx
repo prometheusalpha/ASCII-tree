@@ -26,11 +26,11 @@ function App() {
 
   return (
     <>
-      <div className="w-screen p-8 bg-slate-800 h-screen text-white font-sans" id="main-box">
-        <div className="max-w-5xl text-5xl font-semibold" >
+      <div className="w-screen p-8 bg-slate-800 h-screen text-slate-200 font-sans" id="main-box">
+        <div className="max-w-5xl text-5xl font-semibold font-mono" >
           ASCII Tree
         </div>
-        <hr className="bg-slate-500 my-4" />
+        <hr className="text-slate-500 my-4" />
         <div
           style={{ alignItems: "center", marginBottom: "1rem" }}
           className="max-w-5xl flex gap-3"
