@@ -26,22 +26,21 @@ function App() {
 
   return (
     <>
-      <div className="w-screen p-8 bg-slate-800 h-screen text-slate-200 font-sans" id="main-box">
-        <div className="max-w-5xl text-5xl font-semibold font-mono" >
+      <div className="w-screen bg-slate-800 h-screen text-slate-300 font-sans">
+        <div className="max-w-5xl text-5xl px-8 py-5 font-semibold font-mono" >
           ASCII Tree
         </div>
-        <hr className="text-slate-500 my-4" />
+        <hr className="text-slate-500" />
         <div
-          style={{ alignItems: "center", marginBottom: "1rem" }}
-          className="max-w-5xl flex gap-3"
+          className="max-w-5xl flex items-center gap-5 p-8"
         >
           <button
             onClick={copyNodeContent}
-            className="copy-button font-sans bg-slate-600 p-3 rounded-xl"
+            className="copy-button font-sans bg-slate-700 px-3 py-2 rounded-md"
           >Copy to clipboard</button>
           <div id="output" className="hidden">Copied!</div>
         </div>
-        <div className="max-w-5xl">
+        <div className="max-w-5xl px-8">
           <Node
             end={true}
             name={rootName}

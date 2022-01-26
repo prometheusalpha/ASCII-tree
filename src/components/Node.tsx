@@ -68,13 +68,13 @@ export default function Node(props: any) {
         onMouseEnter={showButton}
         onMouseLeave={hideButton}
       >
-        <div className="flex gap-4">
+        <div className="flex gap-8">
           <div className="font-mono h-5">
             {prefix}
             {isEditable ?
               <input
                 type="text"
-                className="input-name text-white bg-slate-700"
+                className="input-name text-white bg-slate-700 "
                 value={props.name}
                 ref={inputRef}
                 onChange={editSelf}
