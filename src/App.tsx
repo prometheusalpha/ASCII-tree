@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className="w-screen bg-slate-800 h-screen text-slate-300 font-sans">
-        <div className="max-w-5xl text-5xl px-8 py-5 font-semibold font-mono" >
+        <div className="max-w-5xl text-5xl px-8 py-5 font-semibold font-['SF_Mono']" >
           ASCII Tree
         </div>
         <hr className="text-slate-500" />

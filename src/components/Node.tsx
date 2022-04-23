@@ -28,7 +28,7 @@ export default function Node(props: any) {
   }
 
   const add = () => {
-    setDescendants([...descendants, "newFileOrFolder"]);
+    setDescendants([...descendants, "newChildNode"]);
   }
 
   const prefix = props.level !== 0 ? createPrefix(props.previousEnds) : "";
@@ -69,7 +69,7 @@ export default function Node(props: any) {
         onMouseLeave={hideButton}
       >
         <div className="flex gap-8">
-          <div className="font-mono h-5">
+          <div className="font-['SF_Mono'] h-5 node-content">
             {prefix}
             {isEditable ?
               <input
@@ -95,10 +95,10 @@ export default function Node(props: any) {
           />
         </div>
       </div>
-      {descendants.map((fileOrFolder: string, index: number) =>
+      {descendants.map((nodeName: string, index: number) =>
         <Node
           end={index === descendants.length - 1}
-          name={fileOrFolder}
+          name={nodeName}
           key={index}
           level={props.level + 1}
           index={index}
