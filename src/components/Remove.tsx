@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Remove(props: any) {
   const display = props.level === 0 ? "none" : props.show ? 'block' : 'none';
 

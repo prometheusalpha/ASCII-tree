@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Add(props: any) {
 
   const display = props.show ? '1' : '0';
